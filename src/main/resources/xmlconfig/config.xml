@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="xmlBeanTwo" class="com.example.democore.XmlBeanTwo">
+        <property name="text" value="hi from xml config" />
+    </bean>
+
+    <bean id="xMLConfigBean" class="com.example.democore.XMLConfigBean" init-method="init"
+    destroy-method="destroy">
+        <constructor-arg ref="myRepository" />
+        <constructor-arg ref="myService" />
+        <property name="xmlBeanTwo" ref="xmlBeanTwo" />
+        <property name="value" value="nejake value" />
+    </bean>
+
+</beans>
